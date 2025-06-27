@@ -1,0 +1,24 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@coinbase/cdp-sdk": "^1.20.0",
+    "@coinbase/coinbase-sdk": "^0.25.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.6.0",
+    "express": "^5.1.0",
+    "multer": "^2.0.1",
+    "openai": "^5.8.1",
+    "viem": "^2.31.4",
+    "x402-express": "^0.4.1"
+  }
+}
