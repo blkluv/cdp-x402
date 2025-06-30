@@ -26,7 +26,7 @@ app.use(express.json({ limit: "50mb" }));
 app.use(express.urlencoded({ extended: true, limit: "50mb" }));
 app.use(
   paymentMiddleware(
-    "0xAD7c065112dCF8891b10F8e70eF74F5E4A168Fa4", // Replace with your actual wallet address
+    "0x41B947fb3B29210541F12D5e6Ea94135EB8b4717", // Replace with your actual wallet address
     {
       "/api/generate-image": "$0.05", // Charge $0.05 for this endpoint
     }

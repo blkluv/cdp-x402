@@ -53,11 +53,11 @@ function PaymentApp() {
 
     const apiClient = walletClient   
     ? withPaymentInterceptor(  
-        axios.create({ baseURL: 'http://localhost:3001' }),  
+        axios.create({ baseURL: 'https://cdp-x402.vercel.app/' }),  
         // @ts-ignore
         walletClient  
       )  
-    : axios.create({ baseURL: 'http://localhost:3001' });  
+    : axios.create({ baseURL: 'https://cdp-x402.vercel.app/' });  
 
   const handleFileSelect = useCallback((file: File) => {
     const reader = new FileReader();
@@ -189,28 +189,28 @@ function PaymentApp() {
   if (result) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-purple-50">
-        <div className="container mx-auto px-4 py-8">
-          <header className="text-center mb-12 relative">
+        <div className="container px-4 py-8 mx-auto">
+          <header className="relative mb-12 text-center">
             {/* Affiliate Link Button - Top Right */}
             <div className="absolute top-0 right-0">
               <button
                 onClick={generateAffiliateLink}
-                className="flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-lg font-medium hover:from-green-600 hover:to-green-700 transition-all duration-300 shadow-lg hover:shadow-xl text-sm"
+                className="flex items-center px-4 py-2 space-x-2 text-sm font-medium text-white transition-all duration-300 rounded-lg shadow-lg bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 hover:shadow-xl"
               >
                 <Link size={16} />
                 <span>Generate Affiliate Link</span>
               </button>
             </div>
 
-            <div className="flex items-center justify-center space-x-3 mb-4">
-              <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-lg">
+            <div className="flex items-center justify-center mb-4 space-x-3">
+              <div className="flex items-center justify-center w-12 h-12 shadow-lg bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl">
                 <Palette className="text-white" size={24} />
               </div>
-              <h1 className="text-4xl font-bold bg-gradient-to-r from-purple-600 to-purple-800 bg-clip-text text-transparent">
+              <h1 className="text-4xl font-bold text-transparent bg-gradient-to-r from-purple-600 to-purple-800 bg-clip-text">
                 AuraLens
               </h1>
             </div>
-            <p className="text-gray-600 text-lg">
+            <p className="text-lg text-gray-600">
               Capture your essence. Render your vibe.
             </p>
           </header>
@@ -231,22 +231,22 @@ function PaymentApp() {
 
         {/* Affiliate Link Display Modal */}
         {showAffiliateLink && (
-          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-            <div className="bg-white rounded-xl p-6 max-w-md w-full shadow-2xl">
-              <h3 className="text-lg font-semibold mb-4 text-gray-800">Your Affiliate Link</h3>
-              <div className="bg-gray-50 p-3 rounded-lg mb-4 break-all text-sm">
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-50">
+            <div className="w-full max-w-md p-6 bg-white shadow-2xl rounded-xl">
+              <h3 className="mb-4 text-lg font-semibold text-gray-800">Your Affiliate Link</h3>
+              <div className="p-3 mb-4 text-sm break-all rounded-lg bg-gray-50">
                 {affiliateLink}
               </div>
               <div className="flex space-x-3">
                 <button
                   onClick={copyAffiliateLink}
-                  className="flex-1 px-4 py-2 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-lg font-medium hover:from-blue-600 hover:to-blue-700 transition-all duration-300"
+                  className="flex-1 px-4 py-2 font-medium text-white transition-all duration-300 rounded-lg bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700"
                 >
                   Copy Link
                 </button>
                 <button
                   onClick={() => setShowAffiliateLink(false)}
-                  className="flex-1 px-4 py-2 bg-gray-300 text-gray-700 rounded-lg font-medium hover:bg-gray-400 transition-all duration-300"
+                  className="flex-1 px-4 py-2 font-medium text-gray-700 transition-all duration-300 bg-gray-300 rounded-lg hover:bg-gray-400"
                 >
                   Close
                 </button>
@@ -260,28 +260,28 @@ function PaymentApp() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-purple-50">
-      <div className="container mx-auto px-4 py-8">
-        <header className="text-center mb-12 relative">
+      <div className="container px-4 py-8 mx-auto">
+        <header className="relative mb-12 text-center">
           {/* Affiliate Link Button - Top Right */}
           <div className="absolute top-0 right-0">
             <button
               onClick={generateAffiliateLink}
-              className="flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-lg font-medium hover:from-green-600 hover:to-green-700 transition-all duration-300 shadow-lg hover:shadow-xl text-sm"
+              className="flex items-center px-4 py-2 space-x-2 text-sm font-medium text-white transition-all duration-300 rounded-lg shadow-lg bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 hover:shadow-xl"
             >
               <Link size={16} />
               <span>Generate Affiliate Link</span>
             </button>
           </div>
 
-          <div className="flex items-center justify-center space-x-3 mb-4">
-            <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-lg">
+          <div className="flex items-center justify-center mb-4 space-x-3">
+            <div className="flex items-center justify-center w-12 h-12 shadow-lg bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl">
               <Palette className="text-white" size={24} />
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-purple-600 to-purple-800 bg-clip-text text-transparent">
+            <h1 className="text-4xl font-bold text-transparent md:text-5xl bg-gradient-to-r from-purple-600 to-purple-800 bg-clip-text">
               AuraLens
             </h1>
           </div>
-          <p className="text-gray-600 text-lg md:text-xl mb-2">
+          <p className="mb-2 text-lg text-gray-600 md:text-xl">
             Capture your essence. Render your vibe.
           </p>
           <div className="flex items-center justify-center space-x-2 text-purple-600">
@@ -293,22 +293,22 @@ function PaymentApp() {
 
         {/* Affiliate Link Display Modal */}
         {showAffiliateLink && (
-          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-            <div className="bg-white rounded-xl p-6 max-w-md w-full shadow-2xl">
-              <h3 className="text-lg font-semibold mb-4 text-gray-800">Your Affiliate Link</h3>
-              <div className="bg-gray-50 p-3 rounded-lg mb-4 break-all text-sm">
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-50">
+            <div className="w-full max-w-md p-6 bg-white shadow-2xl rounded-xl">
+              <h3 className="mb-4 text-lg font-semibold text-gray-800">Your Affiliate Link</h3>
+              <div className="p-3 mb-4 text-sm break-all rounded-lg bg-gray-50">
                 {affiliateLink}
               </div>
               <div className="flex space-x-3">
                 <button
                   onClick={copyAffiliateLink}
-                  className="flex-1 px-4 py-2 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-lg font-medium hover:from-blue-600 hover:to-blue-700 transition-all duration-300"
+                  className="flex-1 px-4 py-2 font-medium text-white transition-all duration-300 rounded-lg bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700"
                 >
                   Copy Link
                 </button>
                 <button
                   onClick={() => setShowAffiliateLink(false)}
-                  className="flex-1 px-4 py-2 bg-gray-300 text-gray-700 rounded-lg font-medium hover:bg-gray-400 transition-all duration-300"
+                  className="flex-1 px-4 py-2 font-medium text-gray-700 transition-all duration-300 bg-gray-300 rounded-lg hover:bg-gray-400"
                 >
                   Close
                 </button>
@@ -348,14 +348,14 @@ function PaymentApp() {
                   onRender={handleRender}
                 />
               ) : (
-                <div className="text-center space-y-4">
-                  <p className="text-gray-600 mb-4">Connect your wallet to continue</p>
-                  <div className="flex flex-row justify-center space-x-3 max-w-md mx-auto">
+                <div className="space-y-4 text-center">
+                  <p className="mb-4 text-gray-600">Connect your wallet to continue</p>
+                  <div className="flex flex-row justify-center max-w-md mx-auto space-x-3">
                     {connectors.map((connector) => (
                       <button 
                         key={connector.id} 
                         onClick={() => connector.connect()}
-                        className="flex items-center justify-center space-x-3 px-6 py-3 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-xl font-semibold hover:from-blue-600 hover:to-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
+                        className="flex items-center justify-center px-6 py-3 space-x-3 font-semibold text-white transition-all duration-300 shadow-lg bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl hover:from-blue-600 hover:to-blue-700 hover:shadow-xl hover:scale-105"
                       >
                         <img src={connector.icon} alt={connector.name} className="w-6 h-6" />
                       </button>
@@ -367,13 +367,13 @@ function PaymentApp() {
           )}
         </div>
         {error && (
-          <div className="text-red-500 text-center mb-4">
+          <div className="mb-4 text-center text-red-500">
             {error}
           </div>
         )}
 
-        <footer className="mt-16 text-center text-gray-500 text-sm">
-          <div className="flex items-center justify-center space-x-4 mb-4">
+        <footer className="mt-16 text-sm text-center text-gray-500">
+          <div className="flex items-center justify-center mb-4 space-x-4">
             <span>Powered by Stable Diffusion + LoRA</span>
             <span>•</span>
             <span>Secure payments via x402</span>
