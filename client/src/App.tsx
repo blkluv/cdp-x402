@@ -165,7 +165,7 @@ function PaymentApp() {
         onSuccess: (signedMessage) => {
           // Use first 16 characters of signature as affiliate code
           const affiliateCode = signedMessage.slice(2, 18); // Remove 0x prefix and take first 16 chars
-          const link = `http://localhost:5173?ref=${affiliateCode}&addr=${address}&ts=${timestamp}`;
+          const link = `https://cdp-x402.vercel.app/?ref=${affiliateCode}&addr=${address}&ts=${timestamp}`;
           setAffiliateLink(link);
           setShowAffiliateLink(true);
         },
