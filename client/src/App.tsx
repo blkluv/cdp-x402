@@ -53,11 +53,11 @@ function PaymentApp() {
 
     const apiClient = walletClient   
     ? withPaymentInterceptor(  
-        axios.create({ baseURL: 'https://cdp-x402.vercel.app/' }),  
+        axios.create({ baseURL: 'https://cdp-x402.vercel.app' }),  
         // @ts-ignore
         walletClient  
       )  
-    : axios.create({ baseURL: 'https://cdp-x402.vercel.app/' });  
+    : axios.create({ baseURL: 'https://cdp-x402.vercel.app' });  
 
   const handleFileSelect = useCallback((file: File) => {
     const reader = new FileReader();
